@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-Bank Maintenance
+Identity
 {% endblock %}
 
 {% block beforeContent %}
@@ -36,55 +36,20 @@ Bank Maintenance
 {% block content %}
 
 <div class="govuk-grid-row">
-
   <div class="govuk-grid-column-two-thirds">
 
-      <div class="govuk-form-group">
-        <span class="govuk-caption-xl">
-          About your payslip
-        </span>
-
-        <h1 class="govuk-heading-xl">
-          Enter the amount of National Insurance from a payslip
-        </h1>
-
-        <div id="benefit-amount-hint" class="govuk-hint">
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Use a payslip dated after 20 May 2020</li>
-            <li>Get the figure from the 'Deductions' section</li>
-            <li>Do not use the 'Year To Date' figure</li>
-            <li>The amount of National Insurance you paid must be more than 0.00</li>
-          </ul>
-        </div>
-
-        <p class="govuk-hint">For example 123.86</p>
-
-        {{ govukInput({
-          id: "cost",
-          name: "cost",
-          prefix: {
-            text: "£"
-          },
-          classes: "govuk-input--width-10",
-          spellcheck: false
-        }) }}
 
 
-      </div>
+      <h1 class="govuk-heading-xl">
+        Identity check complete
+      </h1>
 
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Where to find out how much National Insurance you paid
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-        </div>
-      </details>
+      <p class="govuk-body-l">You have completed the identity check successfully.</p>
 
-      <a class="govuk-button" href="pay-slip">Continue</a>
-
-    <p class="body-text"><a href="./more-information.html">I don't have that information</a></p>
+      {{ govukButton({
+        text: "Continue",
+        href: ""
+      }) }}
 
   </div>
 </div>
