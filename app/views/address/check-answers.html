@@ -34,107 +34,111 @@ Address finder
 {% endblock %}
 
 {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
 
-<div class="govuk-grid-column-two-thirds-from-desktop">
-
-      <h1 class="govuk-heading-xl">Confirm details</h1>
+      <h1 class="govuk-heading-l">Confirm details</h1>
 
       <h2 class="govuk-heading-m">Search details</h2>
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Property Number
-          </dt>
-          <dd class="govuk-summary-list__value">
-
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="search_pattern">
-              Change
-              <span class="govuk-visually-hidden">Postcode</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Property Name
-          </dt>
-          <dd class="govuk-summary-list__value">
-
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="search_pattern">
-              Change
-              <span class="govuk-visually-hidden">Postcode</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Postcode
-          </dt>
-          <dd class="govuk-summary-list__value">
-
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="search_pattern">
-              Change
-              <span class="govuk-visually-hidden">Postcode</span>
-            </a>
-          </dd>
-        </div>
-        <br><br>
-        <p class="govuk-heading-m">Selected address </p>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Address
-          </dt>
-          <dd class="govuk-summary-list__value">
-            3 King Street South Shields NE33 1HT
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="select_address_pattern">
-              Change
-              <span class="govuk-visually-hidden">Postcode</span>
-            </a>
-          </dd>
-        </div>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Property number"
+            },
+            value: {
+              text: "Sarah Philips"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Property name"
+            },
+            value: {
+              text: "5 January 1978"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Postcode"
+            },
+            value: {
+              html: "72 Guild Street"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
 
 
-      </dl>
+      <h2 class="govuk-heading-m">Selected address</h2>
 
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              text: "502135326"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "previous application number"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
 
+      <h2 class="govuk-heading-m">Confirmation</h2>
 
-<form action="/address-service/check-your-answers-postcode-answer" method="post" class="form">
+      <p class="govuk-body">I confirm I live in the above stated address while I am in United Kingdom.</p>
 
+      <form action="/form-handler" method="post" novalidate>
 
-  <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset">
+        <input type="hidden" name="answers-checked" value="true">
 
-      <h2 class="govuk-heading-m">
-        Confirmation
-      </h2>
+        {{ govukButton({
+          text: "Continue",
+          href: "https://nsjsa-prototype.herokuapp.com/v2_0-citizen/3-details/address-is-it-postal"
+        }) }}
 
-      <p>I confirm I live in the above stated address while I am in United Kingdom. </p><br>
-
-<br>
-    <a href="enter-postcode"><button class="govuk-button" data-module="govuk-button">Continue</button></a> &nbsp; &nbsp; <br>
-
-    {{ govukButton({
-      text: "Continue",
-      href: "https://nsjsa-prototype.herokuapp.com/v2_0-citizen/3-details/address-is-it-postal"
-    }) }}
-
-    </fieldset>
-  </div>
-
-
-</form>
-
-
-
+      </form>
 
     </div>
-
+  </div>
 {% endblock %}
