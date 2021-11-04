@@ -28,7 +28,7 @@ Address finder
 
 {{ govukBackLink({
   text: "Back",
-  href: "../winter-fuel/results"
+  href: "#"
 }) }}
 
 {% endblock %}
@@ -38,42 +38,33 @@ Address finder
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <form action="check-answers" method="post" class="form">
+
 
         <h1 class="govuk-heading-xl">
             Select your address
           </h1>
 
-            <form class="form" action="/address_look_up/check-your-answers-pattern" method="post">
-
               <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
-                      <p class="govuk-!-margin-top-4">2 addresses found for <b> </b> and <b></b> &nbsp;&nbsp;&nbsp;<a href="search_pattern">Change</a></p>
+                      <p class="govuk-!-margin-top-4">1 address found for <b>{{ data['property-num'] }}</b> and <b>{{ data['postcode-add'] }}</b> &nbsp;&nbsp;&nbsp;<a href="search_pattern">Change</a></p>
                     </legend>
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="address-confirmation1" name="address-confirmation" type="radio" value="yes">
+                        <input class="govuk-radios__input" id="address-confirmation1" name="address-confirmation" type="radio" value="6 TURNBERRY, WHITLEY BAY">
                         <label class="govuk-label govuk-radios__label" for="address-confirmation1">
                           6 TURNBERRY, WHITLEY BAY
                         </label>
                       </div>
-                      <div class="govuk-radios">
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="address-confirmation2" name="address-confirmation" type="radio" value="yes">
-                          <label class="govuk-label govuk-radios__label" for="address-confirmation2">
-                            6 NEWSTEADS FARM COTTAGES, WHITLEY BAY
-                          </label>
-                        </div>
-
-                    </div>
                   </div></fieldset>
                 </div>
                 <p><a href="#">I can't find my address in the list</a></p>
                 <br>
-                <p><a href="check-answers" class="govuk-button">
-                  Continue
-                </a></p>
+                {{ govukButton({
+  text: "Continue"
+}) }}
 
           </form>
 

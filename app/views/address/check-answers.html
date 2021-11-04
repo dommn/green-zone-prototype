@@ -28,7 +28,7 @@ Address finder
 
 {{ govukBackLink({
   text: "Back",
-  href: "../winter-fuel/results"
+  href: "#"
 }) }}
 
 {% endblock %}
@@ -41,104 +41,76 @@ Address finder
 
       <h2 class="govuk-heading-m">Search details</h2>
 
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-          {
-            key: {
-              text: "Property number"
-            },
-            value: {
-              text: "Sarah Philips"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Property name"
-            },
-            value: {
-              text: "5 January 1978"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "date of birth"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Postcode"
-            },
-            value: {
-              html: "72 Guild Street"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "address"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Property number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['property-num'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Property name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              None
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Postcode
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['postcode-add'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> address</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
+        <h2 class="govuk-heading-m">Selected address</h2>
 
-      <h2 class="govuk-heading-m">Selected address</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['address-confirmation'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> previous application number</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-          {
-            key: {
-              text: "Address"
-            },
-            value: {
-              text: "502135326"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "previous application number"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
+        <h2 class="govuk-heading-m">Confirmation</h2>
 
-      <h2 class="govuk-heading-m">Confirmation</h2>
-
-      <p class="govuk-body">I confirm I live in the above stated address while I am in United Kingdom.</p>
-
-      <form action="/form-handler" method="post" novalidate>
-
-        <input type="hidden" name="answers-checked" value="true">
+        <p class="govuk-body">I confirm I live in the above stated address while I am in United Kingdom.</p>
 
         {{ govukButton({
           text: "Continue",
           href: "https://nsjsa-prototype.herokuapp.com/v2_0-citizen/3-details/address-is-it-postal"
         }) }}
 
-      </form>
-
+      </div>
     </div>
-  </div>
+
 {% endblock %}

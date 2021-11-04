@@ -28,22 +28,25 @@ Address finder
 
 {{ govukBackLink({
   text: "Back",
-  href: "../winter-fuel/results"
+  href: "#"
 }) }}
 
 {% endblock %}
 
 {% block content %}
 
-<h1 class="govuk-heading-xl">
-    Select your address
-  </h1>
-
 <div class="govuk-form-group">
-            <label class="govuk-heading-m" for="address-number">
+
+  <form action="results" method="post" class="form">
+
+  <h1 class="govuk-heading-xl">
+      Select your address
+    </h1>
+
+            <label class="govuk-heading-m" for="address-num">
               Property number
             </label>
-            <input class="govuk-input govuk-input--width-10" id="property-num" name="property-num" type="integer">
+            <input class="govuk-input govuk-input--width-10" id="property-num" name="property-num">
 
 
             <div class="govuk-checkboxes govuk-!-padding-top-2 govuk-!-padding-bottom-5" data-module="govuk-checkboxes">
@@ -72,13 +75,15 @@ Address finder
               Postcode
             </label>
             <input class="govuk-input govuk-input--width-20" id="postcode-add" name="postcode-add" type="text">
-          </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
 
   {{ govukButton({
-    text: "Continue",
-    href: "results"
+    text: "Continue"
   }) }}
 
 </form>
+</div>
 
 {% endblock %}
