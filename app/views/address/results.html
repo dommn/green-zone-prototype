@@ -1,0 +1,83 @@
+
+{% extends "layout.html" %}
+
+{% block header %}
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="#" class="govuk-header__link govuk-header__link--service-name">
+        Apply for New Style Jobseeker's Allowance
+      </a>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block pageTitle %}
+Address finder
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../winter-fuel/results"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <h1 class="govuk-heading-xl">
+            Select your address
+          </h1>
+
+            <form class="form" action="/address_look_up/check-your-answers-pattern" method="post">
+
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                      <p class="govuk-!-margin-top-4">2 addresses found for <b> </b> and <b></b> &nbsp;&nbsp;&nbsp;<a href="search_pattern">Change</a></p>
+                    </legend>
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="address-confirmation1" name="address-confirmation" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="address-confirmation1">
+                          6 TURNBERRY, WHITLEY BAY
+                        </label>
+                      </div>
+                      <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="address-confirmation2" name="address-confirmation" type="radio" value="yes">
+                          <label class="govuk-label govuk-radios__label" for="address-confirmation2">
+                            6 NEWSTEADS FARM COTTAGES, WHITLEY BAY
+                          </label>
+                        </div>
+
+                    </div>
+                  </div></fieldset>
+                </div>
+                <p><a href="#">I can't find my address in the list</a></p>
+                <br>
+                <p><a href="check-answers" class="govuk-button">
+                  Continue
+                </a></p>
+
+          </form>
+
+    </div>
+  </div>
+
+{% endblock %}
