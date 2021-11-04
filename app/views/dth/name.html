@@ -1,0 +1,79 @@
+
+{% extends "layout.html" %}
+
+{% block header %}
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="#" class="govuk-header__link govuk-header__link--service-name">
+        Apply for New Style Jobseeker's Allowance
+      </a>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block pageTitle %}
+Bank Maintenance
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../winter-fuel/results"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="date-of-birth" method="post">
+                <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h1 class="govuk-fieldset__heading">
+      What is your name?
+    </h1>
+
+  </legend>
+
+
+</fieldset>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="first-name">
+    First name
+  </label>
+
+<input class="govuk-input govuk-!-width-two-thirds" id="first-name" name="first-name" type="text">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="last-name">
+    Last name
+  </label>
+
+<input class="govuk-input govuk-!-width-two-thirds" id="last-name" name="last-name" type="text">
+</div>
+
+{{ govukButton({
+  text: "Continue",
+  href: "dob"
+}) }}
+
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

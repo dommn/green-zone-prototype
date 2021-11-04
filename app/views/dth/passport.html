@@ -1,0 +1,151 @@
+
+{% extends "layout.html" %}
+
+{% block header %}
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="#" class="govuk-header__link govuk-header__link--service-name">
+        Apply for New Style Jobseeker's Allowance
+      </a>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block pageTitle %}
+Bank Maintenance
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../winter-fuel/results"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-xl">
+      About your UK passport
+    </span>
+
+    <h1 class="govuk-heading-xl ">
+      Your passport details
+    </h1>
+
+    <form method="post" action="/idv/hmrciv/payslip">
+
+    <div class="govuk-form-group" data-required="" data-error="Enter your given names in the right format">
+      <label class="govuk-label govuk-label--m " for="givenNames">
+        Given names
+      </label>
+
+      <span id="givenNames-hint" class="govuk-hint">
+        As they appear on your passport
+      </span>
+
+      <input class="govuk-input govuk-input--width-20" id="givenNames" name="firstName" type="text">
+    </div>
+
+    <div class="govuk-form-group" data-required="" data-error="Enter your surname in the right format">
+      <label class="govuk-label govuk-label--m " for="surname">
+        Surname
+      </label>
+
+      <span id="surname-hint" class="govuk-hint">
+        As it appears on your passport
+      </span>
+
+      <input class="govuk-input govuk-input--width-20" id="surname" name="lastName" type="text">
+      </div>
+
+      <div class="govuk-form-group" data-required="" data-error="Enter your passport number in the right format">
+        <label class="govuk-label govuk-label--m " for="passport">
+          Passport number
+        </label>
+
+        <span id="passport-hint" class="govuk-hint">
+          Contains up to 9 numbers and no letters
+        </span>
+
+        <input class="govuk-input govuk-input--width-10" id="passport" name="passport" type="text">
+      </div>
+
+      <div class="govuk-form-group" data-required="" data-error="Enter your passport expiry date in the right format">
+        <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Date of expiry
+          </legend>
+
+          <span id="dob-hint" class="govuk-hint">
+            For example, 31 MAR 26 or 31 03 26
+          </span>
+
+          <div class="govuk-date-input" id="ppExpiryDate">
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group" data-required="" data-error="Enter your passport expiry date in the right format">
+                <label class="govuk-label govuk-date-input__label" for="ppExpiryDateDay">
+                  Day
+                </label>
+
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="ppExpiryDateDay" name="ppExpiryDateDay" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group" data-required="" data-error="Enter your passport expiry date in the right format">
+                <label class="govuk-label govuk-date-input__label" for="ppExpiryDateMonth">
+                  Month
+                </label>
+
+                <input class="govuk-input govuk-date-input__input
+            govuk-input--width-3   " id="ppExpiryDateMonth" name="ppExpiryDateMonth">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group" data-required="" data-error="Enter your passport expiry date in the right format">
+                <label class="govuk-label govuk-date-input__label" for="ppExpiryDateYear">
+                  Year
+                </label>
+
+                <input class="govuk-input govuk-date-input__input govuk-input--width-3" id="ppExpiryDateYear" name="ppExpiryDateYear" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "ni"
+      }) }}
+
+      <p class="body-text"><a href="./more-information.html">I don't have that information</a></p>
+
+
+  </div>
+
+
+
+        </div>
+
+
+{% endblock %}
