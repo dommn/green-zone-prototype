@@ -1,0 +1,90 @@
+
+{% extends "layouts/blank-unbranded.html" %}
+
+
+{% block header %}
+<header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__content">
+      <a href="#" class="govuk-header__link govuk-header__link--service-name">
+        Apply for New Style Jobseeker's Allowance
+      </a>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block pageTitle %}
+Address finder
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  "tag": {
+    "text": "prototype"
+  },
+  "html": "This is a prototype of a new service."
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "#"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-form-group">
+
+  <form action="results" method="post" class="form">
+
+  <h1 class="govuk-heading-xl">
+      Select your address
+    </h1>
+
+            <label class="govuk-heading-m" for="address-num">
+              Property number
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="property-num" name="property-num">
+
+
+            <div class="govuk-checkboxes govuk-!-padding-top-2 govuk-!-padding-bottom-5" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" aria-controls="conditional-contact-3" aria-expanded="false">
+                <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+                  I have a registered property name
+                </label>
+              </div>
+
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-text">
+                    Enter property name
+                  </label>
+                  <div id="contact-hint" class="govuk-hint">
+                    Property name should be a registered name that is part of your address. For example 'Rose cottage' or 'River house'
+                  </div>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="property-name" name="property-name" autocomplete="tel"></div>
+
+              </div>
+            </div>
+
+
+            <label class="govuk-heading-m" for="address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="postcode-add" name="postcode-add" type="text">
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+</form>
+</div>
+
+{% endblock %}
