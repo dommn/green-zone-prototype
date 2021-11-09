@@ -1,17 +1,6 @@
 
 {% extends "layout.html" %}
 
-{% block header %}
-<header class="govuk-header " role="banner" data-module="govuk-header">
-  <div class="govuk-header__container govuk-width-container">
-    <div class="govuk-header__content">
-      <a href="#" class="govuk-header__link govuk-header__link--service-name">
-        Apply for New Style Jobseeker's Allowance
-      </a>
-    </div>
-  </div>
-</header>
-{% endblock %}
 
 {% block pageTitle %}
 Identity
@@ -20,12 +9,12 @@ Identity
 {% block beforeContent %}
 
 {{ govukPhaseBanner({
-  "tag": {
-    "text": "prototype"
-  },
-  "html": "This is a prototype of a new service."
-}) }}
-
+    tag: {
+      text: "alpha"
+    },
+    classes: "govuk-width-container",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
 
 {% endblock %}
 
