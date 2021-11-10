@@ -1,0 +1,72 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Identity
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    classes: "govuk-width-container",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Confirm your identity</h1>
+
+        <p>Confirming your identity helps us check it is really you making a claim – not someone pretending to be you. You will need to register and answer some questions about yourself.</p>
+
+        <div class="govuk-inset-text">
+          <a href="sign-in">Sign in if you have already registered</a>
+        </div>
+
+        <h2 class="govuk-heading-m">Before you start</h2>
+        <p>To register, you will need:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>an email address</li>
+            <li>a mobile phone</li>
+        </ul>
+
+        <p>You will also need information from 2 sources. You can choose from:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>a valid UK passport</li>
+            <li>payslips or P60</li>
+            <li>Self Assessment</li>
+            <li>information about tax credits, if you claim them</li>
+            <li>details of your bank accounts, loans, mortgages or credit agreements</li>
+        </ul>
+
+        <p class="govuk-!-margin-bottom-6"><a href="">I do not have this information</a></p>
+
+        <!-- <h2 class="govuk-heading-m">What happens next</h2>
+        <p>We will send security codes to your email and mobile phone to check that they belong to you.</p>
+        <p>You will create a password, which you will use with your email address to sign in securely.</p>
+        <p>We will ask some questions to check we are dealing with the right person and to protect you against fraud. We will then check this information against our records.</p>
+        <p>Each time you sign in we will send a new security code to your mobile phone.</p> -->
+
+
+
+
+
+
+
+<a href="/auth/dev-ready/register/email-address" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+Continue
+</a>
+
+
+    </div>
+</div>
+
+{% endblock %}
