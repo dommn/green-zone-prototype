@@ -1,0 +1,106 @@
+
+{% extends "layout.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+
+  <div class="govuk-cookie-banner " data-nosnippet role="region" aria-label="Cookies on [name of service]">
+    <div class="govuk-cookie-banner__message govuk-width-container">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-cookie-banner__heading govuk-heading-m">Cookies on DWP login and identification service</h2>
+
+          <div class="govuk-cookie-banner__content">
+            <p class="govuk-body">We use some essential cookies to make this service work.</p>
+            <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-button-group">
+        <button value="accept" type="button" name="cookies" class="govuk-button" data-module="govuk-button">
+          Accept analytics cookies
+        </button>
+        <button value="reject" type="button" name="cookies" class="govuk-button" data-module="govuk-button">
+          Reject analytics cookies
+        </button>
+        <a class="govuk-link" href="#">View cookies</a>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block pageTitle %}
+Identity
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    classes: "govuk-width-container",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Register</h1>
+
+      <p>Register so you can securely sign in whenever you use this service.</p>
+
+      <div class="govuk-inset-text">
+        <a href="/auth/dev-ready/sign-in">Sign in if you have already registered</a>
+      </div>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+      <p>You will need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+          <li>an email address</li>
+          <li>a mobile phone</li>
+      </ul>
+
+      <p>You will also need information from 2 sources so we can check we are dealing with the right person. These are:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+          <li>a UK passport</li>
+          <li>payslips or P60</li>
+          <li>Self Assessment</li>
+          <li>information about tax credits, if you claim them</li>
+          <li>details of your credit record</li>
+      </ul>
+
+      <p><a href="">I do not have this information</a></p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>Your information will be checked against our records. This also helps protect you from fraud.</p>
+
+      <p>We will send security codes to your email and mobile phone to check that they belong to you.</p>
+
+      <p>Whenever you sign in we will send a new security code to your mobile phone.</p>
+
+      <p>You will also need to create a password.</p>
+
+
+
+
+
+
+
+<a href="email-address.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Continue
+</a>
+
+
+  </div>
+</div>
+
+{% endblock %}

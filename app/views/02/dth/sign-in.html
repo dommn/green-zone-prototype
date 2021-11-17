@@ -1,0 +1,81 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Identity
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    classes: "govuk-width-container",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+                <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+    <h1 class="govuk-fieldset__heading">
+      Sign in
+    </h1>
+
+  </legend>
+
+
+</fieldset>
+
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="email-address">
+    Email address
+  </label>
+
+<input class="govuk-input govuk-!-width-full-width" id="email-address" name="email-address" type="text">
+</div>
+
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="user-password">
+    Password
+  </label>
+
+<input class="govuk-input govuk-!-width-full-width" id="user-password" name="user-password" type="password">
+</div>
+
+
+{{ govukButton({
+  text: "Continue",
+  href: "security-code"
+}) }}
+
+
+                <p><a href="register/start">Register now</a> if you have not used this service before. </p>
+
+                <h2 class="govuk-heading-m">Problems signing in</h2>
+
+                <ul class="govuk-list signin">
+                    <li>
+                        <a href="reset-password/start" class="govuk-link">I forgot my password</a>
+                    </li>
+                    <li>
+                        <a href="account-recovery/start-new-email" class="govuk-link">I cannot access the email I use to sign in</a>
+                    </li>
+                </ul>
+        </div>
+    </div>
+
+{% endblock %}

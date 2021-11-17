@@ -1,0 +1,64 @@
+
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Address finder
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    classes: "govuk-width-container",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "#"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="check-answers" method="post" class="form">
+
+
+        <h1 class="govuk-heading-xl">
+            Select address
+          </h1>
+
+              <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                      <p class="govuk-!-margin-top-4">1 address found for <b>{{ data['property-num'] }}</b> and <b>{{ data['postcode-add'] }}</b> &nbsp;&nbsp;&nbsp;<a href="search_pattern">Change</a></p>
+                    </legend>
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="address-confirmation1" name="address-confirmation" type="radio" value="138 HIGH STREET, WHITLEY BAY">
+                        <label class="govuk-label govuk-radios__label" for="address-confirmation1">
+                          138 HIGH STREET, WHITLEY BAY
+                        </label>
+                      </div>
+                  </div></fieldset>
+                </div>
+                <p><a href="#">I can't find my address in the list</a></p>
+                <br>
+                {{ govukButton({
+  text: "Continue"
+}) }}
+
+          </form>
+
+    </div>
+  </div>
+
+{% endblock %}

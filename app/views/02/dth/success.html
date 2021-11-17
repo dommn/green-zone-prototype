@@ -1,0 +1,49 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Identity
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    classes: "govuk-width-container",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- Redirects to services via this page -->
+
+      <form method="post" action="">
+
+
+      <h1 class="govuk-heading-xl">
+        Identity check complete
+      </h1>
+
+      <p class="govuk-body-l">You have completed the identity check successfully.</p>
+
+      <div class="govuk-inset-text">
+        The website address will change when you select 'continue'.
+      </div>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "https://nsjsa-prototype.herokuapp.com/v2_1-citizen/confirmation-identity-confirmed"
+      }) }}
+
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

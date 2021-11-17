@@ -1,6 +1,7 @@
 
 {% extends "layout.html" %}
 
+
 {% block pageTitle %}
 Identity
 {% endblock %}
@@ -21,12 +22,13 @@ Identity
 
 <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
+            <form action="/idv/hmrciv/start-page" method="post">
                 <fieldset class="govuk-fieldset">
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h1 class="govuk-fieldset__heading">
-      Enter your email address
+      What is your postcode?
     </h1>
 
   </legend>
@@ -35,30 +37,24 @@ Identity
 </fieldset>
 
 
-                <p>We will send a security code to this email address.</p>
-
 
 
 <div class="govuk-form-group">
-  <label class="govuk-label" for="register-email-address">
-    Email address
+  <label class="govuk-label" for="postcode">
+    Postcode
   </label>
 
-<input class="govuk-input govuk-!-width-full-width" id="register-email-address" name="register-email-address" type="text">
+<input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text">
 </div>
 
 
 
+{{ govukButton({
+  text: "Continue",
+  href: "identity"
+}) }}
 
-
-
-
-
-<button class="govuk-button" data-module="govuk-button">
-  Continue
-</button>
-
-
+            </form>
         </div>
     </div>
 

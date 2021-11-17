@@ -1,0 +1,61 @@
+
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Identity
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    classes: "govuk-width-container",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+
+        <span class="govuk-caption-xl">
+          About your payslip
+        </span>
+
+        <h1 class="govuk-heading-xl">
+          Enter the amount of National Insurance from a payslip
+        </h1>
+
+        <div id="benefit-amount-hint" class="govuk-hint">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Use a payslip dated after 22 May 2020</li>
+            <li>Get the figure from the 'Deductions' section</li>
+            <li>Do not use the 'Year To Date' figure</li>
+            <li>The amount of National Insurance you paid must be more than 0.00</li>
+          </ul>
+        </div>
+
+        <p class="govuk-hint">For example 123.86</p>
+
+        <div class="govuk-form-group">
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+          </div>
+        </div>
+
+              </div>
+
+
+      <a class="govuk-button" href="pay-slip">Continue</a>
+
+    </div>
+          </div>
+
+{% endblock %}

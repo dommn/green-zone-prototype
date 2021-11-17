@@ -1,6 +1,7 @@
 
 {% extends "layout.html" %}
 
+
 {% block pageTitle %}
 Identity
 {% endblock %}
@@ -15,18 +16,20 @@ Identity
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
 
+
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
+            <form action="date-of-birth" method="post">
                 <fieldset class="govuk-fieldset">
 
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
     <h1 class="govuk-fieldset__heading">
-      Enter your email address
+      What is your name?
     </h1>
 
   </legend>
@@ -34,31 +37,28 @@ Identity
 
 </fieldset>
 
-
-                <p>We will send a security code to this email address.</p>
-
-
-
 <div class="govuk-form-group">
-  <label class="govuk-label" for="register-email-address">
-    Email address
+  <label class="govuk-label" for="first-name">
+    First name
   </label>
 
-<input class="govuk-input govuk-!-width-full-width" id="register-email-address" name="register-email-address" type="text">
+<input class="govuk-input govuk-!-width-two-thirds" id="first-name" name="first-name" type="text">
 </div>
 
+<div class="govuk-form-group">
+  <label class="govuk-label" for="last-name">
+    Last name
+  </label>
 
+<input class="govuk-input govuk-!-width-two-thirds" id="last-name" name="last-name" type="text">
+</div>
 
+{{ govukButton({
+  text: "Continue",
+  href: "dob"
+}) }}
 
-
-
-
-
-<button class="govuk-button" data-module="govuk-button">
-  Continue
-</button>
-
-
+            </form>
         </div>
     </div>
 

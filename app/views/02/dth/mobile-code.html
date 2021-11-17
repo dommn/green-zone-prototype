@@ -1,0 +1,54 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Identity
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    classes: "govuk-width-container",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">We have sent you a text message with your security code</h1>
+
+            <p>It should take one minute to arrive.</p>
+
+            <form action="code-check" method="post" class="form">
+                <div class="govuk-form-group govuk-!-margin-top-6">
+                    <label class="govuk-label" for="2fa-code">
+                        Security code
+                    </label>
+
+                    <input class="govuk-input govuk-input--width-10" id="2fa-code" name="2fa-code" type="text">
+                </div>
+
+
+
+
+
+
+
+                <a href="registration-complete" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+                Continue
+                </a>
+
+            </form>
+
+            <p><a href="resend-code">I did not get a text message</a></p>
+
+
+        </div>
+    </div>
+{% endblock %}

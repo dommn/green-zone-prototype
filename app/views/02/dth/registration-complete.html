@@ -1,0 +1,44 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Identity
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    classes: "govuk-width-container",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Registration complete</h1>
+
+
+          <p>You can now sign in.</p>
+
+
+
+
+
+
+
+
+          <a href="sign-in" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Continue
+          </a>
+
+      </div>
+    </div>
+
+{% endblock %}

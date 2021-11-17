@@ -1,0 +1,82 @@
+
+{% extends "layout.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+
+  <div class="govuk-cookie-banner " data-nosnippet role="region" aria-label="Cookies on [name of service]">
+    <div class="govuk-cookie-banner__message govuk-width-container">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-cookie-banner__heading govuk-heading-m">Cookies on HMRC services</h2>
+
+          <div class="govuk-cookie-banner__content">
+            <p class="govuk-body">We use some essential cookies to make this service work.</p>
+            <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-button-group">
+        <button value="accept" type="button" name="cookies" class="govuk-button" data-module="govuk-button">
+          Accept analytics cookies
+        </button>
+        <button value="reject" type="button" name="cookies" class="govuk-button" data-module="govuk-button">
+          Reject analytics cookies
+        </button>
+        <a class="govuk-link" href="#">View cookies</a>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block pageTitle %}
+Identity
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    classes: "govuk-width-container",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl ">
+        We need to ask some questions to prove your identity
+      </h1>
+
+        <p class="govuk-body">You will be asked to give details about two items you may have, like your:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>UK passport</li>
+          <li>payslips or P60</li>
+          <li>Self Assessment</li>
+          <li>tax credits and Voice ID</li>
+        </ul>
+        <p class="govuk-body">You may also be able to answer questions about your credit record.</p>
+
+        <p class="govuk-body">If you cannot answer these questions, you will need to <a href="#">confirm your identity another way</a>.</p>
+
+        <p class="govuk-body govuk-!-margin-bottom-6">We ask these questions to protect you against malicious or
+          fraudulent attempts to access the service.</p>
+
+          {{ govukButton({
+            text: "Continue",
+            href: "enter-your-details"
+          }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

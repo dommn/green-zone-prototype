@@ -1,0 +1,91 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Bank Maintenance
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    classes: "govuk-width-container",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{{ govukBackLink({
+  text: "Back",
+  href: "bank-details"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+  <h1 class="govuk-heading-l">
+    We have confirmed these account details
+  </h1>
+<br>
+  <div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds">
+       <h3 class="govuk-heading-m">Account details</h3>
+     </div>
+
+     <div class="govuk-grid-column-one-third">
+       <p class="govuk-body govuk-!-font-weight-bold"><a href="../citizens/bank-details" class="govuk-link" style="margin-left: 60%">Change</a></p>
+     </div>
+   </div>
+
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Bank name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Nationwide
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Name on the account
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['name-on-the-account'] }}
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Sort code
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['sort-code'] }}
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key govuk-!-width-one-half">
+        Account number
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['account-number'] }}
+      </dd>
+    </div>
+  </dl>
+  <div class="govuk-inset-text">
+    The website address will change when you select 'continue'.
+  </div>
+
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-!-margin-right-2",
+      href: "https://nsjsa-prototype.herokuapp.com/v2_1-citizen/4-other-benefits/guard"
+    }) }}
+
+  </div>
+</div>
+
+
+
+{% endblock %}

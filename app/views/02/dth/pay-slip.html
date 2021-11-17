@@ -1,0 +1,81 @@
+
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+Identity
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    classes: "govuk-width-container",
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="">
+
+            <div class="govuk-form-group">
+                <span class="govuk-caption-xl">
+                    About your payslip
+                </span>
+
+                <h1 class="govuk-heading-xl">
+                    Enter the amount of tax deducted on a payslip
+                </h1>
+
+                <div id="benefit-amount-hint" class="govuk-hint">
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Use a payslip dated after 22 May 2020</li>
+                        <li>Get the figure from the 'Deductions' section. It may be called 'PAYE' or 'Income Tax'</li>
+                        <li>Do not use the 'Year To Date' figure</li>
+                        <li>The amount of tax deducted must be more than 0.00</li>
+                    </ul>
+                </div>
+
+                <p class="govuk-hint">For example 191.27</p>
+
+                {{ govukInput({
+                  id: "cost",
+                  name: "cost",
+                  prefix: {
+                    text: "£"
+                  },
+                  classes: "govuk-input--width-10",
+                  spellcheck: false
+                }) }}
+
+
+            </div>
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Where to find your tax on your payslip
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+              </div>
+            </details>
+
+            <a class="govuk-button" href="success">Continue</a>
+
+        </form>
+
+        <p class="body-text"><a href="./more-information.html">I don't have that information</a></p>
+
+    </div>
+</div>
+
+{% endblock %}
